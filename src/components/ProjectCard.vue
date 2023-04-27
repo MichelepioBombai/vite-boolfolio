@@ -3,6 +3,12 @@ export default {
   props: {
     project: Object,
   },
+
+  computed: {
+    abstract() {
+      return this.project.text.slice(0, 120) + "...";
+    },
+  },
 };
 </script>
 
@@ -13,7 +19,7 @@ export default {
         <h2>{{ project.title }}</h2>
       </div>
       <div class="card-body">
-        {{ project.text }}
+        {{ abstract }}
       </div>
       <div class="card-footer">Created at {{ project.created_at }}</div>
     </div>

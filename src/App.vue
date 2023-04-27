@@ -7,14 +7,17 @@ export default {
   data() {
     return {
       title: "Vue Boolpress",
-      projects: [],
+      projects: {
+        list: [],
+        pagination: [],
+      },
     };
   },
 
   methods: {
     fetchProjects() {
       axios.get("http://127.0.0.1:8000/api/projects").then((response) => {
-        this.projects = response.data;
+        this.projects.list = response.data.data;
       });
     },
   },
@@ -29,7 +32,12 @@ export default {
 
 <template>
   <AppHeader :title="title" />
-  <ProjectList :projects="projects" title="Most Recent " class="my-4" />
+  <ProjectList
+    :projects="projects.list"
+    :pagination="projects.pagination"
+    title="Most Recent "
+    class="my-4"
+  />
 </template>
 
 <style lang="scss"></style>
