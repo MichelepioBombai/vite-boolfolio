@@ -1,10 +1,12 @@
 <script>
 import axios from "axios";
 import AppHeader from "./components/AppHeader.vue";
+import ProjectList from "./components/ProjectList.vue";
 
 export default {
   data() {
     return {
+      title: "Vue Boolpress",
       projects: [],
     };
   },
@@ -21,16 +23,13 @@ export default {
     this.fetchProjects();
   },
 
-  components: { AppHeader },
+  components: { AppHeader, ProjectList },
 };
 </script>
 
 <template>
-  <AppHeader />
-  <h1>hello world</h1>
-  <ul>
-    <li v-for="project in projects">{{ project.title }}</li>
-  </ul>
+  <AppHeader :title="title" />
+  <ProjectList :projects="projects" title="Most Recent " class="my-4" />
 </template>
 
 <style lang="scss"></style>
