@@ -21,7 +21,20 @@ export default {
       <div class="card-body">
         {{ abstract }}
       </div>
-      <div class="card-footer">Created at {{ project.created_at }}</div>
+      <div class="card-footer d-flex justify-content-between">
+        Created at {{ project.created_at }}
+        <router-link
+          :to="{
+            name: 'project-detail',
+            params: {
+              id: project.id,
+            },
+          }"
+          class="btn btn-primary btn-sm"
+        >
+          Vedi
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
