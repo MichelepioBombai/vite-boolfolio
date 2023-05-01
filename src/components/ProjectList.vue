@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-  <div class="container">
+  <div>
     <h1>{{ title }}</h1>
     <div class="row g-4">
       <ProjectCard
