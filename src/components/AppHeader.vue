@@ -24,7 +24,7 @@ export default {
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="collapse navbar-collapse ms-auto flex-grow-0" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
             <router-link :to="{ name: 'home' }" class="nav-link">
