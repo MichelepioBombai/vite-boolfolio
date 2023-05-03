@@ -20,6 +20,7 @@ export default {
         v-for="project in projects"
         :key="project.id"
         :project="project"
+        :isDetail="false"
         class="col-md-4 d-flex"
       />
     </div>

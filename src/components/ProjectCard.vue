@@ -2,6 +2,7 @@
 export default {
   props: {
     project: Object,
+    isDetail: Boolean,
   },
 
   computed: {
@@ -19,11 +20,12 @@ export default {
         <h2>{{ project.title }}</h2>
       </div>
       <div class="card-body">
-        {{ abstract }}
+        {{ isDetail ? project.text : abstract }}
       </div>
       <div class="card-footer d-flex justify-content-between">
         Created at {{ project.created_at }}
         <router-link
+          v-if="!isDetail"
           :to="{
             name: 'project-detail',
             params: {
